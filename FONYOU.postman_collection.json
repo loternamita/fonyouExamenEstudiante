@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "b11975a8-ec10-4b07-bfc3-530c2b3123da",
+		"name": "FONYOU",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15267953"
+	},
+	"item": [
+		{
+			"name": "CrearEstudiante",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\":\"Carlos Andres Parada\",\n    \"edad\":18,\n    \"ciudad\":\"Bogota\",\n    \"zonaHoraria\":\"America/Bogota\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9097/api/estudiantes/guardarEstudiante"
+			},
+			"response": []
+		},
+		{
+			"name": "CrearExamen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"totalPuntos\":\"100\",\n    \"pregunta\":[\n        {\n            \"enunciado\":\"¿Cuál es la capital de Francia?\",\n            \"opcionCorrecta\":\"A\",\n            \"puntaje\":25,\n            \"opciones\":[\n                {\"texto\":\"Paris\",\"opcion\":\"A\"},\n                {\"texto\":\"Londres\",\"opcion\":\"B\"},\n                {\"texto\":\"Roma\",\"opcion\":\"C\"},\n                {\"texto\":\"Madrid\",\"opcion\":\"D\"}\n            ]\n        },\n        {\n            \"enunciado\":\"¿Cuáles son los cinco tipos de sabores primarios?\",\n            \"opcionCorrecta\":\"C\",\n            \"puntaje\":25,\n            \"opciones\":[\n                {\"texto\":\"amargo, calido, frio\",\"opcion\":\"A\"},\n                {\"texto\":\"dulce, amargo, amarrillo, celeste\",\"opcion\":\"B\"},\n                {\"texto\":\"dulce, amargo, ácido, salado\",\"opcion\":\"C\"},\n                {\"texto\":\"Ninguna\",\"opcion\":\"D\"}\n            ]\n        },\n        {\n            \"enunciado\":\"¿Cuál es el lugar más frío de la tierra?\",\n            \"opcionCorrecta\":\"D\",\n            \"puntaje\":25,\n            \"opciones\":[\n                {\"texto\":\"Espana\",\"opcion\":\"A\"},\n                {\"texto\":\"Francia\",\"opcion\":\"B\"},\n                {\"texto\":\"Egipto\",\"opcion\":\"C\"},\n                {\"texto\":\"Antartida\",\"opcion\":\"D\"}\n            ]\n        },\n        {\n            \"enunciado\":\"¿Quién escribió La Odisea?\",\n            \"opcionCorrecta\":\"B\",\n            \"puntaje\":25,\n            \"opciones\":[\n                {\"texto\":\"Bart\",\"opcion\":\"A\"},\n                {\"texto\":\"Homero\",\"opcion\":\"B\"},\n                {\"texto\":\"Romeo\",\"opcion\":\"C\"},\n                {\"texto\":\"Socrates\",\"opcion\":\"D\"}\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9097/api/examenes/crearExamen"
+			},
+			"response": []
+		},
+		{
+			"name": "AsignarExamenAEstudiante",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"America/New_York\": \"2024-04-05T14:00:00\",\n    \"Europe/London\": \"2024-04-05T19:00:00\",\n    \"Asia/Tokyo\": \"2024-04-06T03:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9097/api/asignarExamen/asginar/252",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9097",
+					"path": [
+						"api",
+						"asignarExamen",
+						"asginar",
+						"252"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RespuestaYCalificacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idEstudiante\":152,\n    \"respuestas\":{\n        \"302\":\"C\",\n        \"303\":\"C\",\n        \"304\":\"C\",\n        \"305\":\"A\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9097/api/respuestaEstudiante/respuestaYCalificacion"
+			},
+			"response": []
+		}
+	]
+}
